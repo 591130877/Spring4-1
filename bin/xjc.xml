@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<!-- <bean id ="dog1" class="com.spring.beans.Dog"></bean> <bean id ="dog2" 
+		class="com.spring.beans.Dog"></bean> <bean id="dog3" class="com.spring.beans.Dog"> 
+		<constructor-arg value="藏獒"></constructor-arg> </bean> -->
+	<bean id="car1" class="com.spring.beans.Car" p:type="BMW" p:factory="BMW" p:price="300000"></bean>
+	<bean id="car2" class="com.spring.beans.Car">
+		<property name="type" value="Benz"></property>
+		<property name="factory" value="Benz"></property>
+		<property name="price" value="300000"></property>
+	</bean>
+	<util:list id="cars">
+		<ref bean="car1"/>
+		<ref bean="car2"/>
+	</util:list>
+	<bean id="person1" class="com.spring.beans.Person">
+		<property name="name" value="张三"></property>
+		<property name="age" value="22"></property>
+		<property name="cars">
+			<ref bean="cars"/>
+		</property>
+		<property name="maps">
+			<map>
+				<entry key="first" value-ref="car1"></entry>
+				<entry key="second" value-ref="car2"></entry>
+			</map>
+		</property>
+	</bean>
+</beans>

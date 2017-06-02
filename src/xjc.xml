@@ -6,6 +6,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
+	<!-- 
+		采用util命名空间设置外部listbean
+	 -->
 	<!-- <bean id ="dog1" class="com.spring.beans.Dog"></bean> <bean id ="dog2" 
 		class="com.spring.beans.Dog"></bean> <bean id="dog3" class="com.spring.beans.Dog"> 
 		<constructor-arg value="藏獒"></constructor-arg> </bean> -->
